@@ -9,8 +9,8 @@ export type AmiItem = {
   url: string;
 };
 
-const CODE_RE = /\b([A-Z]{2,12}-\d{3,})\b/i;
-const URL_CODE_RE = /[?&](?:gcode|scode)=([A-Z]{2,12}-\d{3,})/i;
+const CODE_RE = /\b([A-Z]{2,12}-\d{3,}(?:-[A-Z0-9]+)?)\b/i;
+const URL_CODE_RE = /[?&](?:gcode|scode)=([A-Z]{2,12}-\d{3,}(?:-[A-Z0-9]+)?)/i;
 
 export function extractGcode(input: string): string | null {
   const trimmed = input.trim();
@@ -20,7 +20,7 @@ export function extractGcode(input: string): string | null {
     const m = trimmed.match(CODE_RE);
     return m ? m[1].toUpperCase() : null;
   }
-  const only = trimmed.match(/^([A-Z]{2,12}-\d{3,})$/i);
+  const only = trimmed.match(/^([A-Z]{2,12}-\d{3,}(?:-[A-Z0-9]+)?)$/i);
   return only ? only[1].toUpperCase() : null;
 }
 
@@ -36,7 +36,7 @@ export function parseSearchMarkdown(md: string): AmiItem[] {
   const items: AmiItem[] = [];
   const seen = new Set<string>();
   const re =
-    /\[!\[[^\]]*\]\((https:\/\/img\.amiami\.com\/images\/product\/[^)\s]+)\)\s*([^\]]+)\]\(https:\/\/www\.amiami\.com\/(?:eng|cn)\/detail\/?\?(?:gcode|scode)=([A-Za-z0-9-]+)\)/g;
+    /\[!\[[^\]]*\]\((https:\/\/img\.amiami\.com\/images\/product\/[^)\s]+)\)\s*([^\]]+)\]\(https:\/\/www\.amiami\.com\/(?:eng|cn)\/detail\/?\?(?:gcode|scode)=([A-Za-z0-9-]+(?:-[A-Z0-9]+)?)\)/g;
 
   let match: RegExpExecArray | null;
   while ((match = re.exec(md))) {
