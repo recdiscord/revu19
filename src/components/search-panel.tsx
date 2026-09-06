@@ -71,7 +71,7 @@ export function SearchPanel() {
       <div className="flex items-end justify-between gap-3">
         <div>
           <h2 className="font-display text-xl tracking-tight">Katalog AmiAmi</h2>
-          <p className="mt-1 text-sm text-muted">Wklej link (gcode lub scode), kod produktu albo nazwę.</p>
+          <p className="mt-1 text-sm text-muted">Wklej link</p>
         </div>
         <Button variant="ghost" size="sm" onClick={() => setManualOpen((v) => !v)}>
           Wpisz ręcznie

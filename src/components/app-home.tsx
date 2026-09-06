@@ -31,16 +31,11 @@ export function AppHome() {
         <header>
           <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4 px-4 py-6 md:px-6 md:py-8">
             <div>
-              <p className="text-xs font-medium tracking-[0.22em] text-muted uppercase">
-                桜 · AmiAmi × złotówki
-              </p>
-              <h1 className="font-display mt-1 flex items-center gap-3 text-4xl tracking-tight md:text-5xl">
+              <h1 className="font-display flex items-center gap-3 text-4xl tracking-tight md:text-5xl">
                 <SakuraMark />
                 AmiPLN
               </h1>
-              <p className="mt-2 max-w-md text-sm leading-normal text-muted md:text-base">
-                Cena z katalogu, wysyłka jak u AmiAmi, VAT 23% i cło — zanim klikniesz order.
-              </p>
+
             </div>
             <div className="text-right">
               <p className="text-xs text-subtle">Kurs średni NBP</p>
