@@ -111,9 +111,9 @@ export function SearchPanel() {
         ))}
       </div>
 
-      {manualOpen ? <ManualForm onAdd={addManual} onClose={() => setManualOpen(false)} /> : null}
+      {manualOpen ? <div className="mt-4 overflow-hidden"><ManualForm onAdd={addManual} onClose={() => setManualOpen(false)} /></div> : null}
 
-      <div className="mt-4">
+      <div className="mt-4 overflow-hidden">
         {search.isPending ? (
           <div className="grid gap-2">
             {Array.from({ length: 4 }).map((_, i) => (
@@ -121,26 +121,26 @@ export function SearchPanel() {
             ))}
           </div>
         ) : search.data?.items.length ? (
-          <ul className="grid gap-2">
+          <ul className="grid gap-2 overflow-hidden">
             {search.data.items.map((item) => (
               <li
                 key={item.gcode}
-                className="flex items-center gap-3 rounded-lg bg-bg p-2.5 shadow-[var(--shadow-border)]"
+                className="flex items-center gap-3 rounded-lg bg-bg p-2.5 shadow-[var(--shadow-border)] overflow-hidden"
               >
-                <ProductThumb src={item.image} alt="" gcode={item.gcode} className="size-[72px] rounded-md" />
-                <div className="min-w-0 flex-1">
+                <ProductThumb src={item.image} alt="" gcode={item.gcode} className="size-[72px] rounded-md shrink-0" />
+                <div className="min-w-0 flex-1 overflow-hidden">
                   <div className="flex flex-wrap items-center gap-2">
                     {item.status ? (
                       <Badge tone={item.status === "Pre-order" ? "warn" : "muted"}>{item.status}</Badge>
                     ) : null}
-                    <span className="font-mono text-[11px] text-subtle">{item.gcode}</span>
+                    <span className="font-mono text-[11px] text-subtle shrink-0">{item.gcode}</span>
                   </div>
                   <p className="mt-0.5 truncate text-sm font-medium">{item.name}</p>
                   <p className="truncate text-xs text-muted">
                     {item.maker || "AmiAmi"} · ok. {estimateWeightGrams(item.name, item.gcode)} g
                   </p>
                 </div>
-                <div className="flex shrink-0 flex-col items-end gap-2">
+                <div className="flex shrink-0 flex-col items-end gap-2 ml-2">
                   <div className="text-right">
                     <p className="tabular text-sm font-medium">{formatJpy(item.priceJpy)}</p>
                     {item.listPriceJpy ? (
@@ -198,23 +198,23 @@ function ManualForm({
   return (
     <form
       onSubmit={submit}
-      className="mt-4 grid gap-3 rounded-lg bg-bg p-3 shadow-[var(--shadow-border)] md:grid-cols-2"
+      className="grid gap-3 rounded-lg bg-bg p-3 shadow-[var(--shadow-border)] md:grid-cols-2 overflow-hidden"
     >
       <label className="grid gap-1.5 text-xs font-medium text-muted md:col-span-2">
         Nazwa
-        <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nendoroid Frieren" />
+        <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nendoroid Frieren" className="truncate" />
       </label>
       <label className="grid gap-1.5 text-xs font-medium text-muted">
         Cena (JPY)
-        <Input inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} />
+        <Input inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="truncate" />
       </label>
       <label className="grid gap-1.5 text-xs font-medium text-muted">
         Waga (g)
-        <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} />
+        <Input inputMode="numeric" value={weight} onChange={(e) => setWeight(e.target.value)} className="truncate" />
       </label>
       <label className="grid gap-1.5 text-xs font-medium text-muted md:col-span-2">
         Kod AmiAmi (opcjonalnie)
-        <Input value={gcode} onChange={(e) => setGcode(e.target.value)} placeholder="FIGURE-207871" />
+        <Input value={gcode} onChange={(e) => setGcode(e.target.value)} placeholder="FIGURE-207871" className="truncate" />
       </label>
       <div className="flex flex-wrap gap-2 md:col-span-2">
         {WEIGHT_PRESETS.slice(0, 6).map((p) => (

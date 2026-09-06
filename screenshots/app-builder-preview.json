@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "AmiPLN",
+      "hasCanvas": false,
+      "bodyTextLen": 736,
+      "bodyTextHash": "939bb92133828bbe8630b08579c5c7b31c1605d3efe92d8efb8a132554519ac3",
+      "bodyTextPrefix": "桜 · AMIAMI × ZŁOTÓWKI AmiPLN Cena z katalogu, wysyłka jak u AmiA",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <CatchBoundary getResetKey={function getResetKey} errorComponent={function AppErrorComponent} ...>\n      <SafeFragment fallback={function fallback}>\n        <MatchInnerImpl match={{id:\"//\",ssr:true, ...}}>\n          <Lazy>\n            <Home>\n              <AppHome>\n                <div className=\"paper-wash...\">\n                  <SakuraField>\n                  <div className=\"relative z-10\">\n                    <header>\n                    <main className=\"mx-auto gr...\">\n                      <div className=\"grid gap-6\">\n                        <SearchPanel>\n                          <section className=\"paper-card...\">\n                            <div>\n                            <form onSubmit={function onSubmit} className=\"mt-4 flex ...\">\n                              <div className=\"relative m...\">\n                                <Search>\n                                <Input value=\"\" onChange={function onChange} onPaste={function onPaste} ...>\n                                  <input\n                                    className=\"h-11 w-full rounded-md bg-bg-subtle px-3.5 text-base text-fg shadow-[va...\"\n                                    value=\"\"\n                                    onChange={function onChange}\n                                    onPaste={function onPaste}\n                                    placeholder=\"wklej amiami.com/eng/detail?scode=…\"\n                                    aria-label=\"Szukaj w AmiAmi\"\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                              ...\n                            ...\n                        ...\n                      ...\n                    ...\n"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "AmiPLN",
+      "hasCanvas": false,
+      "bodyTextLen": 736,
+      "bodyTextHash": "ae95a10dbbde5a2768e39321881b46603b5871dd6a78025468e95a7956ea214e",
+      "bodyTextPrefix": "桜 · AMIAMI × ZŁOTÓWKI AmiPLN Cena z katalogu, wysyłka jak u AmiA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

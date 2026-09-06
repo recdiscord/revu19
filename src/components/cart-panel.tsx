@@ -76,18 +76,18 @@ export function CartPanel() {
           </Button>
         </div>
       ) : (
-        <ul className="mt-4 grid gap-2">
+        <ul className="mt-4 grid gap-2 overflow-hidden">
           {items.map((item) => (
             <li
               key={item.id}
-              className="grid grid-cols-[auto_1fr] gap-3 rounded-lg bg-bg p-2.5 shadow-[var(--shadow-border)] sm:grid-cols-[auto_1fr_auto]"
+              className="grid grid-cols-[auto_1fr] gap-3 rounded-lg bg-bg p-2.5 shadow-[var(--shadow-border)] sm:grid-cols-[auto_1fr_auto] overflow-hidden"
             >
-              <ProductThumb src={item.image} alt="" gcode={item.gcode} className="size-16 rounded-md" />
-              <div className="min-w-0">
+              <ProductThumb src={item.image} alt="" gcode={item.gcode} className="size-16 rounded-md shrink-0" />
+              <div className="min-w-0 overflow-hidden">
                 <p className="truncate text-sm font-medium">{item.name}</p>
                 <p className="font-mono text-[11px] text-subtle">{item.gcode}</p>
                 <div className="mt-2 flex flex-wrap items-center gap-2">
-                  <div className="flex h-9 items-center rounded-sm bg-bg-subtle shadow-[var(--shadow-border)]">
+                  <div className="flex h-9 items-center rounded-sm bg-bg-subtle shadow-[var(--shadow-border)] shrink-0">
                     <button
                       type="button"
                       className="flex size-9 items-center justify-center text-muted hover:text-fg"
@@ -106,7 +106,7 @@ export function CartPanel() {
                       <Plus className="size-3.5" />
                     </button>
                   </div>
-                  <label className="flex h-9 items-center gap-1 rounded-sm bg-bg-subtle px-2 text-xs text-muted shadow-[var(--shadow-border)]">
+                  <label className="flex h-9 items-center gap-1 rounded-sm bg-bg-subtle px-2 text-xs text-muted shadow-[var(--shadow-border)] shrink-0">
                     <Input
                       className="tabular h-9 w-20 border-0 bg-transparent px-1 shadow-none"
                       inputMode="numeric"
@@ -116,7 +116,7 @@ export function CartPanel() {
                     />
                     JPY
                   </label>
-                  <label className="flex h-9 items-center gap-1 rounded-sm bg-bg-subtle px-2 text-xs text-muted shadow-[var(--shadow-border)]">
+                  <label className="flex h-9 items-center gap-1 rounded-sm bg-bg-subtle px-2 text-xs text-muted shadow-[var(--shadow-border)] shrink-0">
                     <Input
                       className="tabular h-9 w-16 border-0 bg-transparent px-1 shadow-none"
                       inputMode="numeric"
@@ -129,7 +129,7 @@ export function CartPanel() {
                   </label>
                 </div>
               </div>
-              <div className="col-span-2 flex items-center justify-between sm:col-span-1 sm:flex-col sm:items-end sm:justify-between">
+              <div className="col-span-2 flex items-center justify-between sm:col-span-1 sm:flex-col sm:items-end sm:justify-between shrink-0 ml-2">
                 <p className="tabular text-sm font-medium">{formatJpy(item.priceJpy * item.qty)}</p>
                 <Button
                   variant="ghost"

@@ -53,12 +53,12 @@ export function AppHome() {
           </div>
         </header>
 
-        <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 pb-28 md:px-6 md:py-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:pb-10">
-          <div className="grid gap-6">
+        <main className="mx-auto grid max-w-6xl gap-6 px-4 py-6 pb-28 md:px-6 md:py-8 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:pb-10 overflow-hidden">
+          <div className="grid gap-6 overflow-hidden">
             <SearchPanel />
             {hydrated ? <CartPanel /> : <div className="paper-card h-40 rounded-xl" />}
           </div>
-          <div className="hidden lg:block lg:sticky lg:top-6">
+          <div className="hidden lg:block lg:sticky lg:top-6 overflow-hidden">
             {hydrated ? <QuotePanel rates={rates} /> : <div className="paper-card h-96 rounded-xl" />}
           </div>
         </main>

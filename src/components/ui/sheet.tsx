@@ -24,12 +24,14 @@ export function SheetContent({
         {...props}
       >
         <Dialog.Close
-          className="absolute top-4 right-4 flex size-11 items-center justify-center rounded-md text-muted hover:bg-bg-subtle hover:text-fg"
+          className="absolute top-4 right-4 flex size-11 items-center justify-center rounded-md text-muted hover:bg-bg-subtle hover:text-fg z-10"
           aria-label="Zamknij"
         >
           <X className="size-4" />
         </Dialog.Close>
-        {children}
+        <div className="overflow-hidden">
+          {children}
+        </div>
       </Dialog.Content>
     </Dialog.Portal>
   );

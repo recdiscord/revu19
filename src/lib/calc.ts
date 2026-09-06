@@ -5,7 +5,7 @@ export const LOW_VALUE_EUR = 150;
 export const FLAT_DUTY_EUR = 3;
 
 export type DutyMode = "shipment" | "line";
-export type HsCategory = "figure-epa" | "plastic" | "other";
+export type HsCategory = "figure-epa" | "plastic" | "other" | "figure-standard";
 
 export const HS_RATES: Record<HsCategory, { rate: number; label: string; hint: string }> = {
   "figure-epa": {
@@ -22,6 +22,11 @@ export const HS_RATES: Record<HsCategory, { rate: number; label: string; hint: s
     rate: 0.047,
     label: "Inne / 4,7%",
     hint: "Typowa stawka dla zabawek bez preferencji. Możesz zmienić, gdy znasz kod taryfy.",
+  },
+  "figure-standard": {
+    rate: 0.047,
+    label: "Figurki / zabawki (4,7%)",
+    hint: "Standardowa stawka cła dla figurek i zabawek bez preferencji EPA.",
   },
 };
 
@@ -56,7 +61,7 @@ export const DEFAULT_SETTINGS: QuoteSettings = {
   packingFlatG: 220,
   packingPct: 8,
   dutyMode: "shipment",
-  hs: "figure-epa",
+  hs: "figure-standard",
   customDutyRate: 0.047,
   includeHandling: true,
   pocztaHandlingPln: 12.5,
